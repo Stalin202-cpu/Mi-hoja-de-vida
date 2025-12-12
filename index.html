@@ -1,152 +1,331 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Diego Telenchana — Portafolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-  <style>
-    :root{--bg:#f6f7fb;--card:#ffffff;--accent:#0b63ff;--muted:#6b7280;--glass:rgba(255,255,255,0.55)}
-    *{box-sizing:border-box;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial}
-    body{margin:0;background:linear-gradient(180deg,#f7f9ff 0%,var(--bg) 100%);color:#0b1220}
-    .container{max-width:1100px;margin:36px auto;padding:28px}
-    header{display:flex;gap:28px;align-items:center}
-    .avatar{width:140px;height:140px;border-radius:12px;overflow:hidden;flex:0 0 140px;box-shadow:0 8px 30px rgba(15,23,42,0.12)}
-    .avatar img{width:100%;height:100%;object-fit:cover;display:block}
-    .hero{flex:1}
-    h1{margin:0;font-size:28px}
-    .role{color:var(--muted);margin-top:6px}
-    .contact{margin-top:12px;display:flex;gap:10px;flex-wrap:wrap}
-    .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:10px;text-decoration:none;border:none;background:var(--accent);color:white;font-weight:600}
-    .btn.secondary{background:transparent;color:var(--accent);border:1px solid rgba(11,99,255,0.12)}
-    main{display:grid;grid-template-columns:1fr 380px;gap:28px;margin-top:28px}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Stalin Jaime</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    /* Left column */
-    .card{background:var(--card);border-radius:14px;padding:18px;box-shadow:0 6px 24px rgba(15,23,42,0.06)}
-    .about p{color:#111827;margin:0 0 12px 0;line-height:1.5}
-    .skills{display:flex;flex-wrap:wrap;gap:10px;margin-top:10px}
-    .skill{background:#eef2ff;color:#0b63ff;padding:6px 10px;border-radius:999px;font-size:13px}
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
 
-    /* Projects */
-    .projects{display:grid;gap:12px;margin-top:12px}
-    .proj{display:flex;flex-direction:column;border-radius:10px;padding:14px;border:1px solid #eef2f8;background:linear-gradient(180deg,rgba(255,255,255,0.6),transparent)}
-    .proj h3{margin:0;font-size:16px}
-    .proj p{margin:8px 0 12px;color:var(--muted);font-size:14px}
-    .proj a{font-weight:600;color:var(--accent);text-decoration:none}
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
 
-    /* Right column */
-    aside .section{margin-bottom:16px}
-    .section h4{margin:0 0 10px 0}
-    .exp p{margin:0;color:var(--muted);font-size:14px}
-    footer{margin-top:26px;text-align:center;color:var(--muted);font-size:13px}
+        .header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 50px;
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
 
-    @media (max-width:980px){main{grid-template-columns:1fr}}
-  </style>
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 5px solid white;
+            object-fit: cover;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .header-info h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .header-info h2 {
+            font-size: 1.3em;
+            font-weight: 300;
+            opacity: 0.9;
+        }
+
+        .content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 0;
+        }
+
+        .sidebar {
+            background: #2c3e50;
+            color: white;
+            padding: 40px 30px;
+        }
+
+        .main-content {
+            padding: 40px;
+        }
+
+        .section {
+            margin-bottom: 35px;
+        }
+
+        .section-title {
+            font-size: 1.4em;
+            font-weight: 700;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+            color: #2c3e50;
+        }
+
+        .sidebar .section-title {
+            color: white;
+            border-bottom-color: #667eea;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 15px;
+            font-size: 0.95em;
+        }
+
+        .contact-item svg {
+            width: 20px;
+            height: 20px;
+            fill: #667eea;
+            flex-shrink: 0;
+        }
+
+        .reference {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 8px;
+        }
+
+        .reference h4 {
+            font-size: 1.1em;
+            margin-bottom: 5px;
+        }
+
+        .reference p {
+            font-size: 0.9em;
+            opacity: 0.9;
+            margin-bottom: 3px;
+        }
+
+        .experience-item, .education-item {
+            margin-bottom: 25px;
+            padding-left: 20px;
+            border-left: 3px solid #667eea;
+        }
+
+        .experience-item h3, .education-item h3 {
+            color: #2c3e50;
+            font-size: 1.2em;
+            margin-bottom: 5px;
+        }
+
+        .year {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .experience-item p, .education-item p {
+            color: #555;
+            line-height: 1.6;
+            margin-top: 8px;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+
+        .skill-item {
+            background: rgba(255,255,255,0.1);
+            padding: 10px 15px;
+            border-radius: 8px;
+            font-size: 0.95em;
+        }
+
+        .languages {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .language-item {
+            background: rgba(255,255,255,0.1);
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-size: 0.95em;
+        }
+
+        .about-text {
+            color: #555;
+            line-height: 1.8;
+            text-align: justify;
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                text-align: center;
+                padding: 30px;
+            }
+
+            .header-info h1 {
+                font-size: 2em;
+            }
+
+            .content {
+                grid-template-columns: 1fr;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
-  <div class="container">
-    <header>
-      <div class="avatar">
-        <!-- Reemplaza 'profile.jpg' con el nombre real de tu foto en el repo -->
-        <img src="profile.jpg" alt="Diego Telenchana">
-      </div>
-      <div class="hero">
-        <h1>Diego Johnathan Telenchana Punina</h1>
-        <div class="role">Estudiante • Desarrollo de Software</div>
-        <div class="contact">
-          <a class="btn" href="mailto:diegotelenchana.02sv@gmail.com">✉️ diegotelenchana.02sv@gmail.com</a>
-          <a class="btn secondary" href="tel:+593983425961">📱 0983425961</a>
-          <a class="btn secondary" href="#download">⬇️ Descargar CV</a>
-        </div>
-      </div>
-    </header>
-
-    <main>
-      <section>
-        <div class="card about">
-          <h2>Sobre mí</h2>
-          <p>Soy estudiante de desarrollo de software con experiencia en creación y mantenimiento de sistemas CRUD, consumo de APIs y manejo de bases de datos. Me destaco por aprender rápido, trabajar en equipo y entregar soluciones limpias y funcionales.</p>
-
-          <div style="margin-top:12px">
-            <h4>Habilidades</h4>
-            <div class="skills">
-              <div class="skill">Laravel</div>
-              <div class="skill">PHP</div>
-              <div class="skill">MySQL</div>
-              <div class="skill">JavaScript</div>
-              <div class="skill">HTML/CSS</div>
-              <div class="skill">Git</div>
+    <div class="container">
+        <div class="header">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Ccircle cx='90' cy='90' r='90' fill='%234a5568'/%3E%3Ctext x='90' y='110' font-size='60' text-anchor='middle' fill='white' font-family='Arial'%3ESJ%3C/text%3E%3C/svg%3E" alt="Stalin Jaime" class="profile-img">
+            <div class="header-info">
+                <h1>STALIN JAIME</h1>
+                <h2>Sistemas de Información</h2>
             </div>
-          </div>
-
-          <div style="margin-top:16px">
-            <h4>Experiencia</h4>
-            <p>Desarrollo de sistemas para proyectos universitarios y personales: creación de interfaces, lógica de negocio y conexión con bases de datos. Participación en equipos de trabajo, pruebas y despliegues básicos.</p>
-          </div>
-
         </div>
 
-        <div class="card" style="margin-top:16px">
-          <h2>Proyectos</h2>
-          <div class="projects">
-            <div class="proj">
-              <h3>Sistema de Aplicaciones</h3>
-              <p>Aplicación para gestionar solicitudes y procesos de aplicaciones — CRUD completo y gestión de usuarios.</p>
-              <a href="https://github.com/Jona-08/sistemaAplicaciones" target="_blank">Ver repositorio</a>
-            </div>
+        <div class="content">
+            <aside class="sidebar">
+                <div class="section">
+                    <h3 class="section-title">CONTACTO</h3>
+                    <div class="contact-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                        <span>stalin.jaime@email.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                        <span>+593 99 999 9999</span>
+                    </div>
+                    <div class="contact-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                        <span>Ambato, Tungurahua, Ecuador</span>
+                    </div>
+                </div>
 
-            <div class="proj">
-              <h3>Deportista</h3>
-              <p>Proyecto para gestionar información de deportistas: registro, edición y reportes básicos.</p>
-              <a href="https://gitlab.com/Jonaaa/deportista" target="_blank">Ver repositorio (GitLab)</a>
-            </div>
+                <div class="section">
+                    <h3 class="section-title">SITIO WEB</h3>
+                    <div class="contact-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+                        <span>www.stalinjaime.com</span>
+                    </div>
+                </div>
 
-            <div class="proj">
-              <h3>Universidad</h3>
-              <p>Sistema académico con administración de estudiantes, materias y calificaciones.</p>
-              <a href="https://gitlab.com/Jonaaa/universidad" target="_blank">Ver repositorio (GitLab)</a>
-            </div>
+                <div class="section">
+                    <h3 class="section-title">HABILIDADES TÉCNICAS</h3>
+                    <div class="skills-grid">
+                        <div class="skill-item">Python</div>
+                        <div class="skill-item">Java</div>
+                        <div class="skill-item">SQL</div>
+                        <div class="skill-item">JavaScript</div>
+                        <div class="skill-item">React</div>
+                        <div class="skill-item">Node.js</div>
+                        <div class="skill-item">Git</div>
+                        <div class="skill-item">Docker</div>
+                    </div>
+                </div>
 
-            <div class="proj">
-              <h3>Sistema de Votaciones</h3>
-              <p>Plataforma para gestionar votaciones electrónicas a nivel pequeño (prototipo).</p>
-              <a href="https://gitlab.com/jonaaa-group/sistemavotaciones" target="_blank">Ver repositorio (GitLab)</a>
-            </div>
+                <div class="section">
+                    <h3 class="section-title">IDIOMAS</h3>
+                    <div class="languages">
+                        <div class="language-item">Español - Nativo</div>
+                        <div class="language-item">Inglés - Intermedio</div>
+                    </div>
+                </div>
+            </aside>
 
-            <div class="proj">
-              <h3>Adopciones</h3>
-              <p>Aplicación para gestión de mascotas en adopción (repositorio y recursos públicos).</p>
-              <a href="https://github.com/Eddylucero/Adopciones" target="_blank">Ver repositorio</a>
-            </div>
+            <main class="main-content">
+                <div class="section">
+                    <h3 class="section-title">PERFIL PROFESIONAL</h3>
+                    <p class="about-text">
+                        Profesional en Sistemas de Información con sólida formación en desarrollo de software, gestión de bases de datos y análisis de sistemas. Apasionado por la tecnología y la innovación, con capacidad para resolver problemas complejos mediante soluciones tecnológicas eficientes. Orientado a resultados y al trabajo en equipo, con habilidades de comunicación que facilitan la colaboración interdisciplinaria.
+                    </p>
+                </div>
 
-          </div>
+                <div class="section">
+                    <h3 class="section-title">EXPERIENCIA PROFESIONAL</h3>
+                    <div class="experience-item">
+                        <span class="year">2023 - Presente</span>
+                        <h3>Desarrollador de Software</h3>
+                        <p>Desarrollo y mantenimiento de aplicaciones web utilizando tecnologías modernas. Colaboración con equipos multidisciplinarios para la implementación de soluciones tecnológicas innovadoras. Participación en todas las fases del ciclo de vida del desarrollo de software.</p>
+                    </div>
+                    <div class="experience-item">
+                        <span class="year">2021 - 2023</span>
+                        <h3>Analista de Sistemas Junior</h3>
+                        <p>Análisis de requerimientos y diseño de sistemas de información. Soporte técnico y capacitación a usuarios finales. Documentación de procesos y procedimientos técnicos.</p>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h3 class="section-title">EDUCACIÓN</h3>
+                    <div class="education-item">
+                        <span class="year">2025</span>
+                        <h3>Ingeniería en Sistemas de Información</h3>
+                        <p>Universidad Técnica de Ambato</p>
+                    </div>
+                    <div class="education-item">
+                        <span class="year">2024</span>
+                        <h3>Certificación en Desarrollo Web Full Stack</h3>
+                        <p>Plataforma de Educación en Línea</p>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h3 class="section-title">HABILIDADES BLANDAS</h3>
+                    <div class="skills-grid">
+                        <div class="skill-item">Pensamiento Analítico</div>
+                        <div class="skill-item">Trabajo en Equipo</div>
+                        <div class="skill-item">Resolución de Problemas</div>
+                        <div class="skill-item">Comunicación Efectiva</div>
+                        <div class="skill-item">Adaptabilidad</div>
+                        <div class="skill-item">Aprendizaje Continuo</div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h3 class="section-title">PROYECTOS DESTACADOS</h3>
+                    <div class="experience-item">
+                        <h3>Sistema de Gestión Académica</h3>
+                        <p>Desarrollo de aplicación web para la gestión de estudiantes, cursos y calificaciones. Implementación con React, Node.js y MongoDB.</p>
+                    </div>
+                    <div class="experience-item">
+                        <h3>Aplicación Móvil de Comercio Electrónico</h3>
+                        <p>Diseño e implementación de app móvil multiplataforma para ventas en línea con integración de pasarelas de pago.</p>
+                    </div>
+                </div>
+            </main>
         </div>
-      </section>
-
-      <aside>
-        <div class="card section">
-          <h4>Contacto</h4>
-          <p>Email: diegotelenchana.02sv@gmail.com</p>
-          <p>Tel: 0983425961</p>
-          <p>Ubicación: Ambato, Ecuador</p>
-        </div>
-
-        <div class="card section">
-          <h4>Descargar CV</h4>
-          <p style="color:var(--muted)">Haz clic en el botón para descargar tu CV en PDF.</p>
-          <a id="download" class="btn" href="resume.pdf" download>Descargar CV</a>
-        </div>
-
-        <div class="card section">
-          <h4>Redes</h4>
-          <p style="color:var(--muted)">Añade aquí tus perfiles (GitHub, LinkedIn) si quieres que los publique.</p>
-        </div>
-      </aside>
-    </main>
-
-    <footer>
-      Diseñado por Diego Johnathan • Portafolio generado automáticamente
-    </footer>
-  </div>
+    </div>
 </body>
 </html>
