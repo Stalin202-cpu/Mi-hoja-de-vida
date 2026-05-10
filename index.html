@@ -3,13 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV - Stalin Jaime</title>
+    <title>CV - Stalin Xavier Jaime Tandazo</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -37,8 +33,8 @@
         }
 
         .profile-img {
-            width: 180px;
-            height: 180px;
+            width: 160px;
+            height: 160px;
             border-radius: 50%;
             border: 5px solid white;
             object-fit: cover;
@@ -46,21 +42,27 @@
         }
 
         .header-info h1 {
-            font-size: 3em;
-            margin-bottom: 10px;
+            font-size: 2.6em;
+            margin-bottom: 8px;
             font-weight: 700;
         }
 
         .header-info h2 {
-            font-size: 1.3em;
+            font-size: 1.2em;
             font-weight: 300;
             opacity: 0.9;
+            margin-bottom: 6px;
+        }
+
+        .header-info .utc {
+            font-size: 1em;
+            opacity: 0.75;
+            font-style: italic;
         }
 
         .content {
             display: grid;
             grid-template-columns: 1fr 2fr;
-            gap: 0;
         }
 
         .sidebar {
@@ -69,21 +71,19 @@
             padding: 40px 30px;
         }
 
-        .main-content {
-            padding: 40px;
-        }
+        .main-content { padding: 40px; }
 
-        .section {
-            margin-bottom: 35px;
-        }
+        .section { margin-bottom: 32px; }
 
         .section-title {
-            font-size: 1.4em;
+            font-size: 1.2em;
             font-weight: 700;
-            margin-bottom: 20px;
-            padding-bottom: 10px;
+            margin-bottom: 18px;
+            padding-bottom: 8px;
             border-bottom: 3px solid #667eea;
             color: #2c3e50;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
         }
 
         .sidebar .section-title {
@@ -93,248 +93,320 @@
 
         .contact-item {
             display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 15px;
-            font-size: 0.95em;
+            align-items: flex-start;
+            gap: 10px;
+            margin-bottom: 14px;
+            font-size: 0.9em;
+            line-height: 1.4;
+            word-break: break-all;
         }
 
         .contact-item svg {
-            width: 20px;
-            height: 20px;
+            width: 18px;
+            height: 18px;
             fill: #667eea;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .contact-item a {
+            color: #a8c4f0;
+            text-decoration: none;
+        }
+
+        .contact-item a:hover { text-decoration: underline; }
+
+        .skill-item {
+            background: rgba(255,255,255,0.12);
+            padding: 8px 14px;
+            border-radius: 6px;
+            font-size: 0.9em;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .skill-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #667eea;
             flex-shrink: 0;
         }
 
-        .reference {
-            margin-bottom: 20px;
-            padding: 15px;
-            background: rgba(255,255,255,0.1);
-            border-radius: 8px;
+        .language-item {
+            background: rgba(255,255,255,0.12);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.88em;
+            margin-bottom: 8px;
+            display: inline-block;
+            margin-right: 6px;
         }
 
-        .reference h4 {
-            font-size: 1.1em;
-            margin-bottom: 5px;
+        .about-text {
+            color: #444;
+            line-height: 1.8;
+            text-align: justify;
+            font-size: 0.97em;
         }
 
-        .reference p {
-            font-size: 0.9em;
-            opacity: 0.9;
-            margin-bottom: 3px;
-        }
-
-        .experience-item, .education-item {
-            margin-bottom: 25px;
-            padding-left: 20px;
+        .edu-item {
+            margin-bottom: 22px;
+            padding-left: 18px;
             border-left: 3px solid #667eea;
         }
 
-        .experience-item h3, .education-item h3 {
+        .edu-item h3 {
             color: #2c3e50;
-            font-size: 1.2em;
-            margin-bottom: 5px;
+            font-size: 1.1em;
+            margin-bottom: 4px;
+        }
+
+        .edu-item .institution {
+            color: #667eea;
+            font-weight: 600;
+            font-size: 0.95em;
+            margin-bottom: 4px;
         }
 
         .year {
             display: inline-block;
             background: #667eea;
             color: white;
-            padding: 4px 12px;
+            padding: 3px 12px;
             border-radius: 20px;
-            font-size: 0.85em;
+            font-size: 0.82em;
             font-weight: 600;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
 
-        .experience-item p, .education-item p {
+        .project-item {
+            margin-bottom: 22px;
+            padding: 16px;
+            border: 1px solid #e8eaf0;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+        }
+
+        .project-item h3 {
+            color: #2c3e50;
+            font-size: 1.05em;
+            margin-bottom: 6px;
+        }
+
+        .project-item p {
             color: #555;
             line-height: 1.6;
-            margin-top: 8px;
+            font-size: 0.92em;
+            margin-bottom: 8px;
         }
 
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 12px;
-        }
-
-        .skill-item {
-            background: rgba(255,255,255,0.1);
-            padding: 10px 15px;
-            border-radius: 8px;
-            font-size: 0.95em;
-        }
-
-        .languages {
+        .project-item .tech-tags {
             display: flex;
-            gap: 15px;
             flex-wrap: wrap;
+            gap: 6px;
+            margin-bottom: 8px;
         }
 
-        .language-item {
-            background: rgba(255,255,255,0.1);
-            padding: 10px 20px;
+        .tech-tag {
+            background: #eef0ff;
+            color: #667eea;
+            font-size: 0.78em;
+            padding: 3px 10px;
             border-radius: 20px;
-            font-size: 0.95em;
+            font-weight: 600;
         }
 
-        .about-text {
+        .project-link {
+            color: #667eea;
+            text-decoration: none;
+            font-size: 0.88em;
+            font-weight: 600;
+        }
+
+        .project-link:hover { text-decoration: underline; }
+
+        .soft-skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .soft-skill {
+            background: #f0f2ff;
+            color: #2c3e50;
+            padding: 7px 16px;
+            border-radius: 20px;
+            font-size: 0.88em;
+            border: 1px solid #d0d5f0;
+        }
+
+        .no-exp-box {
+            background: #f8f9ff;
+            border: 1px dashed #c0c8f0;
+            border-radius: 10px;
+            padding: 20px;
             color: #555;
-            line-height: 1.8;
-            text-align: justify;
+            font-size: 0.93em;
+            line-height: 1.7;
         }
 
         @media (max-width: 768px) {
-            .header {
-                flex-direction: column;
-                text-align: center;
-                padding: 30px;
-            }
-
-            .header-info h1 {
-                font-size: 2em;
-            }
-
-            .content {
-                grid-template-columns: 1fr;
-            }
-
-            .skills-grid {
-                grid-template-columns: 1fr;
-            }
+            .header { flex-direction: column; text-align: center; padding: 30px; }
+            .header-info h1 { font-size: 1.8em; }
+            .content { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
     <div class="container">
+
         <div class="header">
-            <img src="./images/f1.png" alt="Stalin Jaime" class="profile-img">
+            <img src="./images/f1.png" alt="Stalin Xavier Jaime Tandazo" class="profile-img">
             <div class="header-info">
-                <h1>STALIN JAIME</h1>
-                <h2>Sistemas de Información</h2>
+                <h1>STALIN XAVIER JAIME TANDAZO</h1>
+                <h2>Ingeniero en Sistemas de Información</h2>
+                <span class="utc">Universidad Técnica de Cotopaxi · Latacunga, Ecuador</span>
             </div>
         </div>
 
         <div class="content">
+
             <aside class="sidebar">
+
                 <div class="section">
-                    <h3 class="section-title">CONTACTO</h3>
+                    <h3 class="section-title">Contacto</h3>
                     <div class="contact-item">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-                        <span>stalinjaine8@email.com</span>
+                        <span>stalinjaine8@gmail.com</span>
                     </div>
                     <div class="contact-item">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-                        <span>+593 99 871 4577</span>
+                        <span>+593 998 714 577</span>
                     </div>
                     <div class="contact-item">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
                         <span>Latacunga, Cotopaxi, Ecuador</span>
                     </div>
-                </div>
-
-                <div class="section">
-                    <h3 class="section-title">SITIO WEB</h3>
                     <div class="contact-item">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
-                        <span></span>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg>
+                        <a href="https://github.com/Stalin202-cpu" target="_blank">github.com/Stalin202-cpu</a>
+                    </div>
+                    <div class="contact-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+                        <a href="https://www.linkedin.com/in/stalinjaimet" target="_blank">linkedin.com/in/stalinjaimet</a>
                     </div>
                 </div>
 
                 <div class="section">
-                    <h3 class="section-title">HABILIDADES TÉCNICAS</h3>
-                    <div class="skills-grid">
-                        <div class="skill-item">Python</div>
-                        <div class="skill-item">Java</div>
-                        <div class="skill-item">SQL</div>
-                        <div class="skill-item">JavaScript</div>
-                        <div class="skill-item">Git</div>
-                        <div class="skill-item">Docker</div>
-                    </div>
+                    <h3 class="section-title">Habilidades Técnicas</h3>
+                    <div class="skill-item"><span class="skill-dot"></span>Python</div>
+                    <div class="skill-item"><span class="skill-dot"></span>SQL / Bases de Datos</div>
+                    <div class="skill-item"><span class="skill-dot"></span>JavaScript</div>
+                    <div class="skill-item"><span class="skill-dot"></span>Django</div>
+                    <div class="skill-item"><span class="skill-dot"></span>Linux</div>
+                    <div class="skill-item"><span class="skill-dot"></span>Soporte Técnico</div>
+                    <div class="skill-item"><span class="skill-dot"></span>Redes de Computadoras</div>
+                    <div class="skill-item"><span class="skill-dot"></span>HTML / CSS</div>
                 </div>
 
                 <div class="section">
-                    <h3 class="section-title">IDIOMAS</h3>
-                    <div class="languages">
-                        <div class="language-item">Español - Nativo</div>
-                        <div class="language-item">Inglés - Intermedio</div>
-                    </div>
+                    <h3 class="section-title">Idiomas</h3>
+                    <div class="language-item">Español — Nativo</div>
+                    <div class="language-item">Inglés — Básico / Técnico</div>
                 </div>
+
             </aside>
 
             <main class="main-content">
+
                 <div class="section">
-                    <h3 class="section-title">PERFIL PROFESIONAL</h3>
+                    <h3 class="section-title">Perfil Profesional</h3>
                     <p class="about-text">
-                        Profesional en Sistemas de Información con sólida formación en desarrollo de software, gestión de bases de datos y análisis de sistemas. Apasionado por la tecnología y la innovación, con capacidad para resolver problemas complejos mediante soluciones tecnológicas eficientes. Orientado a resultados y al trabajo en equipo, con habilidades de comunicación que facilitan la colaboración interdisciplinaria.
+                        Recién graduado en Ingeniería en Sistemas de la Información por la Universidad Técnica de Cotopaxi (2022–2026). Con sólida formación en desarrollo de software, bases de datos, redes y soporte técnico. Apasionado por la tecnología y la resolución de problemas mediante soluciones informáticas. Proactivo, con capacidad de aprendizaje rápido y disposición para asumir nuevos retos profesionales. Disponible para trabajo presencial en Latacunga, Ambato o Quito.
                     </p>
                 </div>
 
                 <div class="section">
-                    <h3 class="section-title">EXPERIENCIA PROFESIONAL</h3>
-                    <div class="experience-item">
-                        <span class="year">2023 - Presente</span>
-                        <h3>Desarrollador de Software</h3>
-                        <p>Desarrollo y mantenimiento de aplicaciones web utilizando tecnologías modernas. Colaboración con equipos multidisciplinarios para la implementación de soluciones tecnológicas innovadoras. Participación en todas las fases del ciclo de vida del desarrollo de software.</p>
-                    </div>
-                    <div class="experience-item">
-                        <span class="year">2021 - 2025</span>
-                        <h3>Analista de Sistemas Junior</h3>
-                        <p>Análisis de requerimientos y diseño de sistemas de información. Soporte técnico y capacitación a usuarios finales. Documentación de procesos y procedimientos técnicos.</p>
+                    <h3 class="section-title">Educación</h3>
+                    <div class="edu-item">
+                        <span class="year">2022 – 2026</span>
+                        <h3>Ingeniería en Sistemas de la Información</h3>
+                        <div class="institution">Universidad Técnica de Cotopaxi — Latacunga, Ecuador</div>
+                        <p style="color:#555; font-size:0.91em; line-height:1.6;">Formación en desarrollo de software, redes, bases de datos, sistemas operativos, ingeniería de software y seguridad informática.</p>
                     </div>
                 </div>
 
                 <div class="section">
-                    <h3 class="section-title">EDUCACIÓN</h3>
-                    <div class="education-item">
-                        <span class="year">2025</span>
-                        <h3>Ingeniería en Sistemas de Información</h3>
-                        <p>Universidad Técnica de Ambato</p>
-                    </div>
-                    <div class="education-item">
-                        <span class="year">2024</span>
-                        <h3>Certificación en Desarrollo Web Full Stack</h3>
-                        <p>Plataforma de Educación en Línea</p>
+                    <h3 class="section-title">Experiencia Laboral</h3>
+                    <div class="no-exp-box">
+                        Como recién graduado, mi experiencia se concentra en proyectos académicos desarrollados durante la carrera, los cuales demuestran mis habilidades técnicas en desarrollo de software, bases de datos y sistemas web. Estoy en búsqueda de mi primera oportunidad profesional para aplicar y seguir desarrollando mis conocimientos.
                     </div>
                 </div>
 
                 <div class="section">
-                    <h3 class="section-title">HABILIDADES BLANDAS</h3>
-                    <div class="skills-grid">
-                        <div class="skill-item">Pensamiento Analítico</div>
-                        <div class="skill-item">Trabajo en Equipo</div>
-                        <div class="skill-item">Resolución de Problemas</div>
-                        <div class="skill-item">Comunicación Efectiva</div>
-                        <div class="skill-item">Adaptabilidad</div>
-                        <div class="skill-item">Aprendizaje Continuo</div>
-                    </div>
-                </div>
+                    <h3 class="section-title">Proyectos Académicos</h3>
 
-                <div class="section">
-                    <h3 class="section-title">PROYECTOS DESTACADOS</h3>
-                    <div class="experience-item">
-                        <h3>Sistema de Gestión Académica</h3>
-                        <p>Desarrollo de aplicación web para la gestión de estudiantes, cursos y calificaciones. Implementación con React, Node.js y MongoDB.</p>
-                    </div>
-                    <div class="experience-item">
-                        <h3>Aplicación Móvil de Comercio Electrónico</h3>
-                        <p>Diseño e implementación de app móvil multiplataforma para ventas en línea con integración de pasarelas de pago.</p>
-                    </div>
-                </div>
-                <div class="section">
-                    <h3 class="section-title">PROYECTOS DESTACADOS</h3>
-                    <div class="experience-item">
+                    <div class="project-item">
                         <h3>ObservaEstrellas</h3>
-                        <p>Aplicación web interactiva para la observación y estudio astronómico. Sistema que permite visualizar constelaciones, planetas y eventos celestes con información detallada. Implementación con tecnologías modernas para una experiencia educativa inmersiva.</p>
-                        <p><a href="https://github.com/Stalin202-cpu/ObservaEstrellas.git" target="_blank" style="color: #667eea; text-decoration: none; font-weight: 600;">🔗 Ver repositorio en GitHub</a></p>
+                        <p>Aplicación web interactiva para la observación y estudio astronómico. Permite visualizar constelaciones, planetas y eventos celestes con información detallada para una experiencia educativa inmersiva.</p>
+                        <div class="tech-tags">
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">HTML/CSS</span>
+                            <span class="tech-tag">APIs</span>
+                        </div>
+                        <a class="project-link" href="https://github.com/Stalin202-cpu/ObservaEstrellas" target="_blank">🔗 Ver en GitHub</a>
                     </div>
-                    <div class="experience-item">
+
+                    <div class="project-item">
                         <h3>Zonas de Seguridad</h3>
-                        <p>Sistema de mapeo y gestión de zonas seguras para emergencias. Aplicación que permite identificar, registrar y visualizar puntos de encuentro seguros en caso de desastres naturales o situaciones de riesgo, con geolocalización y alertas en tiempo real.</p>
-                        <p><a href="https://github.com/Stalin202-cpu/zonasSeguridad.git" target="_blank" style="color: #667eea; text-decoration: none; font-weight: 600;">🔗 Ver repositorio en GitHub</a></p>
+                        <p>Sistema de mapeo y gestión de zonas seguras para emergencias. Permite identificar y visualizar puntos de encuentro seguros en caso de desastres naturales, con geolocalización y alertas.</p>
+                        <div class="tech-tags">
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">Mapas / Geolocalización</span>
+                            <span class="tech-tag">HTML/CSS</span>
+                        </div>
+                        <a class="project-link" href="https://github.com/Stalin202-cpu/zonasSeguridad" target="_blank">🔗 Ver en GitHub</a>
+                    </div>
+
+                    <div class="project-item">
+                        <h3>TiendaSJ21 — Comercio Electrónico</h3>
+                        <p>Sistema de tienda en línea con gestión de productos, carrito de compras y administración de pedidos. Proyecto enfocado en desarrollo web full-stack.</p>
+                        <div class="tech-tags">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Django</span>
+                            <span class="tech-tag">SQL</span>
+                            <span class="tech-tag">JavaScript</span>
+                        </div>
+                        <a class="project-link" href="https://github.com/Stalin202-cpu/tiendaSJ21" target="_blank">🔗 Ver en GitHub</a>
+                    </div>
+
+                    <div class="project-item">
+                        <h3>TurismoSA — Plataforma de Turismo</h3>
+                        <p>Aplicación web para la promoción y gestión de destinos turísticos, con información de rutas, atractivos y servicios locales.</p>
+                        <div class="tech-tags">
+                            <span class="tech-tag">HTML/CSS</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">SQL</span>
+                        </div>
+                        <a class="project-link" href="https://github.com/Stalin202-cpu/turismoSA" target="_blank">🔗 Ver en GitHub</a>
                     </div>
                 </div>
+
+                <div class="section">
+                    <h3 class="section-title">Habilidades Blandas</h3>
+                    <div class="soft-skills">
+                        <span class="soft-skill">Pensamiento analítico</span>
+                        <span class="soft-skill">Trabajo en equipo</span>
+                        <span class="soft-skill">Resolución de problemas</span>
+                        <span class="soft-skill">Comunicación efectiva</span>
+                        <span class="soft-skill">Aprendizaje continuo</span>
+                        <span class="soft-skill">Adaptabilidad</span>
+                    </div>
+                </div>
+
             </main>
         </div>
     </div>
